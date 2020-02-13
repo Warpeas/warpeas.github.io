@@ -32,7 +32,7 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
-new_post_name: :title.md # File name of new posts
+new_post_name: :year-:month-:day-:title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link:
@@ -60,6 +60,7 @@ index_generator:
   path: ''
   per_page: 10
   order_by: -date
+  pagination_dir: page
 
 # Category & Tag
 default_category: uncategorized
@@ -94,6 +95,86 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next
+
+# count time
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+  exclude_codeblock: false
+
+# filter optimize
+filter_optimize:
+  enable: true
+  # remove the surrounding comments in each of the bundled files
+  remove_comments: false
+  css:
+    # bundle loaded css file into the one
+    bundle: true
+    # use a script block to load css elements dynamically
+    delivery: true
+    # make specific css content inline into the html page
+    #   - only support the full path
+    #   - default is ['css/main.css']
+    inlines:
+    excludes:
+  js:
+    # bundle loaded js file into the one
+    bundle: true
+    excludes:
+  # set the priority of this plugin,
+  # lower means it will be executed first, default is 10
+  priority: 12
+
+  # Change title and favicon when window is hidden and visible.
+title_change:
+  enable: false
+
+  # Enabling this feature on non-desktop devices may not be a good choice, but it depends on you.
+  onmobile: false
+
+  # Enable random title or not.
+  # Basically `random: true` means you have several titles to display and `random: false` means you have only one title to display.
+  # When `random: true`, YOU MUST FOLLOW the format which has been commented in two title options below.
+  # When `random: false`, please fill in the same line of the title option, like `title: one title`.
+  random: false
+
+  # Restore the original title after the specified time in milliseconds.
+  timeout: 2019
+
+  # Options when window is hidden.
+  hidden:
+    favicon: /images/favicon-32x32-next.png
+    title:
+      #- 404
+      #- φ(*￣0￣)
+      #- Waiting for you.
+
+  # Options when window is visible.
+  visible:
+    favicon: /images/favicon-32x32-next.png
+    title:
+      #- 200
+      #- (✿◡‿◡)
+      - Welcome back!
+
+mathjax:
+  tags: none # or 'ams' or 'all'
+  single_dollars: true
+  ex_factor: 0.5
+
+emoji:
+  enable: true
+  className: github-emoji
+  styles:
+  customEmojis:
+
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
