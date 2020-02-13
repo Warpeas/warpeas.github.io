@@ -11,7 +11,7 @@ install:
 script:
  # - hexo g
   - hexo clean
-  - hexo generate --deploy
+  - hexo g -d
 
 after_script:
   - cd ./public
