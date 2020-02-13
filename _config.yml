@@ -129,7 +129,7 @@ filter_optimize:
 
   # Change title and favicon when window is hidden and visible.
 title_change:
-  enable: false
+  enable: true
 
   # Enabling this feature on non-desktop devices may not be a good choice, but it depends on you.
   onmobile: false
