@@ -10,7 +10,8 @@ install:
 
 script:
  # - hexo g
-  - hexo generate --watch --deploy
+  - hexo clean
+  - hexo generate --deploy
 
 after_script:
   - cd ./public
